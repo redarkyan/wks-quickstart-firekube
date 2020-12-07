@@ -135,7 +135,7 @@ fi
 check_version wksctl "${WKSCTL_VERSION}"
 
 log "Creating footloose manifest"
-jk generate -f config.yaml setup.js
+#jk generate -f config.yaml setup.js
 
 cluster_key="cluster-key"
 if [ ! -f "${cluster_key}" ]; then
@@ -150,7 +150,7 @@ do_footloose create
 log "Creating Cluster API manifests"
 status="footloose-status.yaml"
 do_footloose status -o json > "${status}"
-jk generate -f config.yaml -f "${status}" setup.js
+#jk generate -f config.yaml -f "${status}" setup.js
 rm -f "${status}"
 
 log "Updating container images and git parameters"
